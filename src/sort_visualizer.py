@@ -14,7 +14,7 @@ size = (512, 512)
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Sorting")
 
-random_list = [i for i in range(512)]
+random_list = [i for i in range(64)]
 random.shuffle(random_list)
 all_sprites_list = pygame.sprite.Group()
 
@@ -59,6 +59,17 @@ def check_events():
         if event.type == pygame.QUIT:
             pygame.quit()
 
+
+# Bubble Sort
+def bubble_sort(L):
+    for i in range(len(L) - 1):
+        for j in range(len(L) - 1 - i):
+            check_events()
+            if L[j] > L[j+1]:
+                L[j], L[j+1] = L[j+1], L[j]
+            redraw_bars()
+    
+
 # Selection Sort
 def selection_sort():
     for i in range(len(random_list)):
@@ -66,10 +77,13 @@ def selection_sort():
 
         min_index = i
         for j in range(i, len(random_list)):
+            check_events()
+
             if random_list[min_index] > random_list[j]:
                 min_index = j
         random_list[i], random_list[min_index] = random_list[min_index], random_list[i]
         redraw_bars()
+
 
 # Insertion Sort
 def insertion_sort():
@@ -83,6 +97,7 @@ def insertion_sort():
             redraw_bars()
             check_events()
         random_list[j + 1] = key
+
 
 # Quicksort "in-place"
 def quicksort_inplace(L):
@@ -121,6 +136,7 @@ def partition(L, start, end):
     
     L[start], L[j] = L[j], L[start]
     return j
+
 
 # Merge Sort
 def merge_sort(L):
@@ -171,7 +187,7 @@ def main():
     init_setup()
     while True:
         check_events()
-        merge_sort(random_list)
+        bubble_sort(random_list)
     keep_running()
 
 main()

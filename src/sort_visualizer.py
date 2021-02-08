@@ -59,6 +59,7 @@ def check_events():
         if event.type == pygame.QUIT:
             pygame.quit()
 
+# Selection Sort
 def selection_sort():
     for i in range(len(random_list)):
         check_events()
@@ -70,6 +71,57 @@ def selection_sort():
         random_list[i], random_list[min_index] = random_list[min_index], random_list[i]
         redraw_bars()
 
+# Insertion Sort
+def insertion_sort():
+    check_events()
+    for i in range(1, len(random_list)):
+        j = i - 1
+        key = random_list[i]
+        while (j >= 0 and random_list[j] > key):
+            random_list[j + 1] = random_list[j]
+            j -= 1
+            redraw_bars()
+            check_events()
+        random_list[j + 1] = key
+
+# Quicksort "in-place"
+def quicksort_inplace(L):
+    quicksort(L, 0, len(L) - 1)
+
+def quicksort(L, start, end):
+    if start >= end:
+        return
+    j = partition(L, start, end)
+    redraw_bars()
+    quicksort(L, start, j-1)
+    quicksort(L, j+1, end)
+
+def partition(L, start, end):
+    check_events()
+    pivot = L[start]
+    i = start
+    j = end + 1
+    while (True):
+        i += 1
+        while (L[i] <= pivot):
+            if (i == end):
+                break
+            i += 1
+
+        j -= 1
+        while (L[j] > pivot):
+            if (j == start):
+                break
+            j -= 1
+
+        if (i >= j):
+            break
+
+        L[i], L[j] = L[j], L[i]
+    
+    L[start], L[j] = L[j], L[start]
+    return j
+
 def keep_running():
     while True:
         check_events()
@@ -78,7 +130,7 @@ def main():
     pygame.init()
     draw_bars()
     init_setup()
-    selection_sort()
+    quicksort_inplace(random_list)
     keep_running()
 
 main()

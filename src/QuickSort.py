@@ -1,7 +1,5 @@
 # Quicksort "in-place"
 def quicksort_inplace(L):
-    from sort_visualizer import check_events, redraw_bars
-
     quicksort(L, 0, len(L) - 1)
 
 def quicksort(L, start, end):
@@ -12,6 +10,8 @@ def quicksort(L, start, end):
     quicksort(L, j+1, end)
 
 def partition(L, start, end):
+    from sort_visualizer import check_events, redraw_bars
+
     check_events()
     pivot = L[start]
     i = start

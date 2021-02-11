@@ -15,15 +15,17 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 BLUE = (0, 0, 255)
 
+
+pygame.init()
+
 size = (512, 512)
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Sorting")
 
-random_list = [i for i in range(64)]
+random_list = [i for i in range(256)]
 random.shuffle(random_list)
 all_sprites_list = pygame.sprite.Group()
 
-running = True
 
 # Create a list of bars
 def draw_bars():
@@ -52,7 +54,7 @@ def init_setup():
     pygame.display.flip()
 
 def redraw_bars():
-    pygame.time.delay(100)
+    pygame.time.delay(10)
     all_sprites_list.empty()
     draw_bars()
     screen.fill(WHITE)
@@ -71,12 +73,9 @@ def keep_running():
 
 
 def main():
-    pygame.init()
-    draw_bars()
     init_setup()
-    while True:
-        check_events()
-        bubble_sort(random_list)
+    check_events()
+    merge_sort(random_list)
     keep_running()
 
 main()

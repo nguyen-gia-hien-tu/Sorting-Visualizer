@@ -1,8 +1,6 @@
 
 # Merge Sort
 def merge_sort(L):
-    from sort_visualizer import check_events, redraw_bars
-
     aux = []
     for num in L:
         aux.append(num)
@@ -16,9 +14,10 @@ def m_sort(L, aux, start, end):
     m_sort(L, aux, start, mid)
     m_sort(L, aux, mid+1, end)
     merge(L, aux, start, mid, end)
-    redraw_bars()
 
 def merge(L, aux, start, mid, end):
+    from sort_visualizer import check_events, redraw_bars
+
     check_events()
     i = start
     j = mid + 1
@@ -38,3 +37,5 @@ def merge(L, aux, start, mid, end):
         else:
             L[k] = aux[j]
             j += 1
+        redraw_bars()
+

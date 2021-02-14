@@ -7,4 +7,4 @@ def bubble_sort(L):
             check_events()
             if L[j] > L[j+1]:
                 L[j], L[j+1] = L[j+1], L[j]
-            redraw_bars()
+            redraw_bars(20)

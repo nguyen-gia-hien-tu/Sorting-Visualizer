@@ -1,4 +1,3 @@
-
 # Merge Sort
 def merge_sort(L):
     aux = []
@@ -37,5 +36,5 @@ def merge(L, aux, start, mid, end):
         else:
             L[k] = aux[j]
             j += 1
-        redraw_bars()
+        redraw_bars(30)
 

@@ -33,8 +33,8 @@ def partition(L, start, end):
             break
 
         L[i], L[j] = L[j], L[i]
-        redraw_bars()
+        redraw_bars(100)
     
     L[start], L[j] = L[j], L[start]
-    redraw_bars()
+    redraw_bars(100)
     return j

@@ -54,8 +54,8 @@ def init_setup():
     all_sprites_list.draw(screen)
     pygame.display.flip()
 
-def redraw_bars():
-    pygame.time.delay(50)
+def redraw_bars(num_delay):
+    pygame.time.delay(num_delay)
     all_sprites_list.empty()
     draw_bars()
     screen.fill(WHITE)

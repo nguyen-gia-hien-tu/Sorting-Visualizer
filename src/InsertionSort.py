@@ -9,6 +9,6 @@ def insertion_sort(L):
         while (j >= 0 and L[j] > key):
             L[j + 1] = L[j]
             j -= 1
-            redraw_bars()
+            redraw_bars(50)
             check_events()
         L[j + 1] = key

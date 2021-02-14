@@ -1,6 +1,7 @@
 import pygame
 import random
 import math
+import sys
 
 from BubbleSort import bubble_sort
 from SelectionSort import selection_sort
@@ -54,7 +55,7 @@ def init_setup():
     pygame.display.flip()
 
 def redraw_bars():
-    pygame.time.delay(10)
+    pygame.time.delay(50)
     all_sprites_list.empty()
     draw_bars()
     screen.fill(WHITE)
@@ -66,7 +67,6 @@ def check_events():
         if event.type == pygame.QUIT:
             pygame.quit()
 
-
 def keep_running():
     while True:
         check_events()
@@ -75,7 +75,18 @@ def keep_running():
 def main():
     init_setup()
     check_events()
-    merge_sort(random_list)
+    if sys.argv[1] == "BubbleSort":
+        bubble_sort(random_list)
+    elif sys.argv[1] == "SelectionSort":
+        selection_sort(random_list)
+    elif sys.argv[1] == "InsertionSort":
+        insertion_sort(random_list)
+    elif sys.argv[1] == "MergeSort":
+        merge_sort(random_list)
+    elif sys.argv[1] == "QuickSort":
+        quicksort_inplace(random_list)
+    else:
+        print("Wrong input argument")
     keep_running()
 
 main()

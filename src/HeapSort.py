@@ -1,12 +1,28 @@
+# Heap Sort
+
+NUM_DELAY = 200
+
 def build_heap(L):
+    from sort_visualizer import check_events, redraw_bars
+
+    check_events()
     for i in range(len(L) // 2 - 1, -1, -1):
+        check_events()
         sink(L, len(L), i)
+        redraw_bars(NUM_DELAY)
 
 def heap_sort(L):
+    from sort_visualizer import check_events, redraw_bars
+
+    check_events()
     build_heap(L)
+
+    check_events()
     length_L = len(L)
     for _ in range(len(L)):
+        check_events()
         L[0], L[length_L - 1] = L[length_L - 1], L[0]
+        redraw_bars(NUM_DELAY)
         length_L -= 1
         sink(L, length_L, 0)
     return L
@@ -26,5 +42,3 @@ def left(i):
 
 def right(i):
     return 2 * i + 2
-
-print(heap_sort([i for i in range(10)]))

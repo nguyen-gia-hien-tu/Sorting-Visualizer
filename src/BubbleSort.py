@@ -1,4 +1,5 @@
 # Bubble Sort
+
 def bubble_sort(L):
     from sort_visualizer import check_events, redraw_bars
     

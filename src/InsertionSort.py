@@ -1,7 +1,8 @@
 # Insertion Sort
+
 def insertion_sort(L):
     from sort_visualizer import check_events, redraw_bars
-    
+ 
     check_events()
     for i in range(1, len(L)):
         j = i - 1

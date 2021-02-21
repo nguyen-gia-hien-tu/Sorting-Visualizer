@@ -1,4 +1,5 @@
 # Selection Sort
+
 def selection_sort(L):
     from sort_visualizer import check_events, redraw_bars
 

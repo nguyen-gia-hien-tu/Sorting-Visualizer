@@ -1,6 +1,6 @@
 # Heap Sort
 
-NUM_DELAY = 200
+NUM_DELAY = 100
 
 def build_heap(L):
     from sort_visualizer import check_events, redraw_bars

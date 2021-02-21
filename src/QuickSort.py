@@ -12,7 +12,6 @@ def quicksort(L, start, end):
 def partition(L, start, end):
     from sort_visualizer import check_events, redraw_bars
 
-    check_events()
     pivot = L[start]
     i = start
     j = end + 1
@@ -33,8 +32,10 @@ def partition(L, start, end):
             break
 
         L[i], L[j] = L[j], L[i]
-        redraw_bars(100)
+        redraw_bars(50)
+        check_events()
     
     L[start], L[j] = L[j], L[start]
-    redraw_bars(100)
+    redraw_bars(50)
+    check_events()
     return j

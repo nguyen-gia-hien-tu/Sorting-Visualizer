@@ -17,7 +17,6 @@ def m_sort(L, aux, start, end):
 def merge(L, aux, start, mid, end):
     from sort_visualizer import check_events, redraw_bars
 
-    check_events()
     i = start
     j = mid + 1
     for index in range(start, end + 1):
@@ -37,4 +36,5 @@ def merge(L, aux, start, mid, end):
             L[k] = aux[j]
             j += 1
         redraw_bars(30)
+        check_events()
 

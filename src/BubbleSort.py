@@ -5,7 +5,7 @@ def bubble_sort(L):
     
     for i in range(len(L) - 1):
         for j in range(len(L) - 1 - i):
-            check_events()
             if L[j] > L[j+1]:
                 L[j], L[j+1] = L[j+1], L[j]
-            redraw_bars(20)
+            redraw_bars(5)
+            check_events()

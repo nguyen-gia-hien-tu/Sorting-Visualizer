@@ -116,5 +116,6 @@ def main():
                         quicksort_inplace(random_list)
                     elif (pos[0] >= 156 and pos[0] <= 356) and (pos[1] >= 420 and pos[1] <= 470):
                         heap_sort(random_list)
+    pygame.quit()
 
 main()

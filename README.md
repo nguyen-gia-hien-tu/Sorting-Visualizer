@@ -1,4 +1,4 @@
-# Sorting Visualizer
+# Sorting Visualizer (This README is no longer true, will be updated later)
 
 This is a sorting visualizer using python and pygame.
 

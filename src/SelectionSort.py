@@ -11,5 +11,5 @@ def selection_sort(L):
             if L[min_index] > L[j]:
                 min_index = j
         L[i], L[min_index] = L[min_index], L[i]
-        redraw_bars(50)
+        redraw_bars(75)
         check_events()

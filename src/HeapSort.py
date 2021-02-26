@@ -24,9 +24,13 @@ def heap_sort(L):
         check_events()
         length_L -= 1
         sink(L, length_L, 0)
+        redraw_bars(NUM_DELAY)
     return L
 
 def sink(L, length_L, i):
+    from sort_visualizer import check_events
+
+    check_events()
     largest = i
     if (left(i) < length_L) and (L[left(i)] > L[largest]):
         largest = left(i)
